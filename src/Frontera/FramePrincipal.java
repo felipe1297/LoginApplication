@@ -5,21 +5,29 @@
  */
 package Frontera;
 
+import Entidad.Sistema;
+import Entidad.Usuario;
+import static Frontera.FramePrincipal.sistema;
+import java.util.ArrayList;
+
 /**
  *
  * @author felipepineda
  */
 public class FramePrincipal extends javax.swing.JFrame {
 
-    
     private Registro registro = new Registro();
     private Ingreso ingreso = new Ingreso();
-    
+
+    //Se inicializa un sistema
+    public static Sistema sistema = new Sistema();
+
     /**
      * Creates new form FramePrincipal
      */
     public FramePrincipal() {
         initComponents();
+        inicializacion();//<------------
     }
 
     /**
@@ -67,7 +75,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,7 +96,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
         );
 
         pack();
@@ -141,6 +149,38 @@ public class FramePrincipal extends javax.swing.JFrame {
                 new FramePrincipal().setVisible(true);
             }
         });
+    }
+
+    public void inicializacion() {
+
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+
+        //Creacion Usuarios
+        Usuario a = new Usuario();
+        Usuario b = new Usuario();
+        Usuario c = new Usuario();
+
+        //Generacion de nombre y contaseñas
+        a.setNombre("Juan");
+        a.setPassword("1234");
+        b.setNombre("Pedro");
+        b.setPassword("123");
+        c.setNombre("Maria");
+        c.setPassword("12345");
+
+        //Se añaden usuarios
+        usuarios.add(a);
+        usuarios.add(b);
+        usuarios.add(c);
+        
+        sistema.setUsuarios(usuarios);
+        
+        for (Usuario u: sistema.getUsuarios()) {
+            System.out.println(u.getNombre());
+            System.out.println(u.getPassword());
+            System.out.println("------------");
+        }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
