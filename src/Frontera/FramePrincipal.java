@@ -27,7 +27,7 @@ public class FramePrincipal extends javax.swing.JFrame {
      */
     public FramePrincipal() {
         initComponents();
-        inicializacion();//<------------
+        //inicializacion();//<------------
     }
 
     /**
@@ -151,37 +151,6 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
     }
 
-    public void inicializacion() {
-
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
-
-        //Creacion Usuarios
-        Usuario a = new Usuario();
-        Usuario b = new Usuario();
-        Usuario c = new Usuario();
-
-        //Generacion de nombre y contaseñas
-        a.setNombre("Juan");
-        a.setPassword("1234");
-        b.setNombre("Pedro");
-        b.setPassword("123");
-        c.setNombre("Maria");
-        c.setPassword("12345");
-
-        //Se añaden usuarios
-        usuarios.add(a);
-        usuarios.add(b);
-        usuarios.add(c);
-        
-        sistema.setUsuarios(usuarios);
-        
-        for (Usuario u: sistema.getUsuarios()) {
-            System.out.println(u.getNombre());
-            System.out.println(u.getPassword());
-            System.out.println("------------");
-        }
-
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ingresoB;
