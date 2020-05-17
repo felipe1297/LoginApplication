@@ -30,7 +30,7 @@ public class Usuario implements Serializable{
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public Usuario() {
     }
 
