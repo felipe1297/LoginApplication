@@ -113,7 +113,7 @@ public class TestLogin {
         u.setNombre("maria");
         u.setPassword("12345");
         assertEquals(validar.verificarLogin(u), USUARIO_AUTORIZADO);
-        
+    
     }
     
 }
